@@ -7,51 +7,29 @@
 }
 
 body {
-  background: #000;
-  color: white;
+  background: #000; /* fundal complet negru */
+  color: #ff8c00;   /* text principal portocaliu */
   overflow-x: hidden;
-}
-
-body {
-  
   margin: 0;
-  color: white;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(-45deg, #000000, #0b1020, #111827, #000000);
-  background-size: 400% 400%;
-  animation: bgMove 12s ease infinite;
 }
 
-@keyframes bgMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* HERO */
+/* HERO – fundal negru, fără animație */
 .hero {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(-45deg, #0b1020, #1e293b, #111827, #0f172a);
-  background-size: 400% 400%;
-  animation: gradient 12s ease infinite;
-}
-
-@keyframes gradient {
-  0% {background-position:0% 50%;}
-  50% {background-position:100% 50%;}
-  100% {background-position:0% 50%;}
+  background: #000;
 }
 
 .hero h1 {
   font-size: 55px;
+  color: #ffa500; /* portocaliu deschis pentru titlu */
 }
 
 .hero p {
-  color: #cbd5e1;
+  color: #ffb347; /* portocaliu mai pal pentru subtitlu */
   margin-top: 10px;
 }
 
@@ -59,10 +37,17 @@ body {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 20px;
-  background: #38bdf8;
-  color: black;
+  background: #ff8c00;
+  color: #000;
   border-radius: 10px;
   text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ffa500;
+  transform: scale(1.02);
 }
 
 /* SECTIONS */
@@ -70,7 +55,7 @@ body {
   padding: 100px 15%;
 }
 
-/* FADE IN */
+/* FADE IN – păstrează efectul */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -82,7 +67,7 @@ body {
   transform: translateY(0);
 }
 
-/* STATS */
+/* STATS – numere portocalii */
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -92,7 +77,11 @@ body {
 
 .stat h3 {
   font-size: 40px;
-  color: #38bdf8;
+  color: #ff8c00;
+}
+
+.stat p {
+  color: #ffcc80; /* portocaliu deschis pentru textul de sub număr */
 }
 
 /* CARDS */
@@ -103,34 +92,47 @@ body {
 }
 
 .card {
-  background: #111827;
+  background: #111; /* gri foarte închis, dar se vede pe negru */
   padding: 20px;
   border-radius: 12px;
   transition: 0.3s;
+  color: #ffb347;
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(255,140,0,0.2);
 }
 
-/* TIMELINE */
+/* TIMELINE – linie portocalie */
 .timeline div {
   margin: 15px 0;
   padding-left: 15px;
-  border-left: 2px solid #38bdf8;
+  border-left: 2px solid #ff8c00;
+  color: #ffb347;
 }
 
-/* BACK TO TOP */
+/* BACK TO TOP – buton portocaliu */
 #topBtn {
   position: fixed;
   bottom: 20px;
   right: 20px;
   padding: 12px 15px;
   border: none;
-  background: #38bdf8;
-  color: black;
+  background: #ff8c00;
+  color: #000;
   border-radius: 50%;
   cursor: pointer;
   display: none;
+  font-weight: bold;
+  transition: 0.3s;
 }
+
+#topBtn:hover {
+  background: #ffa500;
+  transform: scale(1.05);
+}
+
+
+
+
