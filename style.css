@@ -71,6 +71,18 @@ body {
   object-fit: cover;      /* decupează imaginea pentru a umple zona fără deformare */
   border-radius: 8px;
 }
+
+.card img {
+  max-width: 800px;
+  width: 100%;           /* sau auto, după preferință */
+  height: 200px;         /* înălțimea dorită - modifici aici valoarea */
+  object-fit: cover;     /* ESENȚIAL: face ca imaginea să umple zona fără deformare */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border-radius: 8px;
+}
+
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
