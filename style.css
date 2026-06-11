@@ -122,15 +122,36 @@ body {
 }
 
 /* IMAGINI – înălțime FORȚATĂ cu !important */
+/* Cardul nu mai are padding pe laterale */
+.card {
+  width: 100%;
+  background: #111;
+  padding: 0;                /* elimină tot padding-ul */
+  border-radius: 12px;
+  overflow: hidden;          /* păstrează colțurile rotunde */
+  color: #ffb347;
+}
 
+/* Adaugi padding doar pe text, nu pe imagine */
+.card h3, .card p, .card a {
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
+/* Linkul primește și margin jos pentru spațiere */
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+/* Imaginea – lată cât cardul, înălțime fixă, decupare corectă */
 .card img {
-  width: 100%;           /* întinde imaginea pe toată lățimea cardului */
-  height: 120px;        /* păstrează înălțimea fixă */
-  object-fit: cover;    /* decupează imaginea pentru a umple zona fără deformare */
+  width: 100%;              /* întinde pe toată lățimea cardului */
+  height: 120px;            /* înălțimea ta dorită (modifici aici) */
+  object-fit: cover;        /* decupează ca să umple fără deformare */
   display: block;
-  margin: 15px 0 0 0;   /* margine sus, automat stânga/dreapta 0 */
-  border-radius: 8px;
+  margin: 0;                /* fără margini, lovește marginile */
 }
 
 /* TIMELINE */
