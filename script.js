@@ -1,49 +1,54 @@
-// script.js
+// ======================== COUNTER ANIMATION ========================
 const counters = document.querySelectorAll('.counter');
-const speed = 200;
+let counted = false;
 
-const animateCounter = (counter) => {
-  const target = +counter.getAttribute('data-target');
-  let count = 0;
-  const updateCounter = () => {
-    if (count < target) {
-      count += Math.ceil(target / 30);
-      if (count > target) count = target;
-      counter.innerText = count;
-      setTimeout(updateCounter, 20);
-    } else {
+function animateCounter(counter) {
+  const target = parseInt(counter.getAttribute('data-target'), 10);
+  let current = 0;
+  const increment = Math.ceil(target / 30);
+  const update = () => {
+    current += increment;
+    if (current >= target) {
       counter.innerText = target;
+      return;
     }
+    counter.innerText = current;
+    requestAnimationFrame(update);
   };
-  updateCounter();
-};
+  update();
+}
 
-// Observator pentru a porni animația când statisticile devin vizibile
 const statsSection = document.querySelector('.stats');
-const observer = new IntersectionObserver((entries) => {
+const statsObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
+    if (entry.isIntersecting && !counted) {
+      counted = true;
       counters.forEach(counter => animateCounter(counter));
-      observer.unobserve(statsSection);
+      statsObserver.unobserve(statsSection);
     }
   });
 }, { threshold: 0.5 });
-observer.observe(statsSection);
+if (statsSection) statsObserver.observe(statsSection);
 
-// Reveal on scroll
+// ======================== REVEAL ON SCROLL ========================
 const reveals = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('active');
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
   });
 }, { threshold: 0.2 });
 reveals.forEach(el => revealObserver.observe(el));
 
-// Back to top button
+// ======================== BACK TO TOP BUTTON ========================
 const topBtn = document.getElementById('topBtn');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) topBtn.style.display = 'block';
-  else topBtn.style.display = 'none';
+  if (window.scrollY > 300) {
+    topBtn.style.display = 'block';
+  } else {
+    topBtn.style.display = 'none';
+  }
 });
 topBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
