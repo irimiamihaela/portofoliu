@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: white;
+}
+
+/* SECTIONS */
+.section {
+  min-height: 100vh;
+  padding: 80px 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #cccccc;
+}
+
+/* BUTTON */
+.btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: white;
+  color: black;
+  text-decoration: none;
+  width: fit-content;
+  align-self: center;
+  border-radius: 8px;
+}
+
+/* HEADINGS */
+h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* LIST */
+ul {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* GRID PROJECTS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card a {
+  color: #00d4ff;
+  text-decoration: none;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: #888;
+}
