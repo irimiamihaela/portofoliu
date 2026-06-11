@@ -74,12 +74,12 @@ body {
 
 .card img {
   max-width: 800px;
-  width: 100%;           /* sau auto, după preferință */
-  height: 200px;         /* înălțimea dorită - modifici aici valoarea */
-  object-fit: cover;     /* ESENȚIAL: face ca imaginea să umple zona fără deformare */
+  height: 100px !important;   /* înălțimea dorită – poți pune 80px, 120px etc. */
+  width: auto;
   margin-left: auto;
   margin-right: auto;
   display: block;
+  object-fit: cover;
   border-radius: 8px;
 }
 
@@ -121,7 +121,7 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-1px);
   box-shadow: 0 10px 30px rgba(255,140,0,0.2);
 }
 
