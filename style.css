@@ -7,13 +7,13 @@
 }
 
 body {
-  background: #000; /* fundal complet negru */
-  color: #ff8c00;   /* text principal portocaliu */
+  background: #000;
+  color: #ff8c00;
   overflow-x: hidden;
   margin: 0;
 }
 
-/* HERO – fundal negru, fără animație */
+/* HERO */
 .hero {
   height: 100vh;
   display: flex;
@@ -25,11 +25,11 @@ body {
 
 .hero h1 {
   font-size: 55px;
-  color: #ffa500; /* portocaliu deschis pentru titlu */
+  color: #ffa500;
 }
 
 .hero p {
-  color: #ffb347; /* portocaliu mai pal pentru subtitlu */
+  color: #ffb347;
   margin-top: 10px;
 }
 
@@ -52,35 +52,19 @@ body {
 
 /* SECTIONS */
 .section {
-  padding: 20px 15%;
+  padding: 60px 15%;  /* redus față de 100px pentru a micșora spațiul între secțiuni */
 }
 
-/* FADE IN – păstrează efectul */
+/* Spațiu suplimentar doar pentru titlul proiectelor (previne suprapunerea la hover) */
+#projects h2 {
+  margin-bottom: 50px;
+}
+
+/* FADE IN */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
   transition: all 1s ease;
-}
-.card img {
-  max-width: 800px;
-  height: 150px;          /* înălțime fixă pentru toate imaginile */
-  width: auto;            /* lățimea se ajustează automat, dar nu depășește max-width */
-  margin-left: auto;
-  margin-right: auto;
-  display: block;         /* asigură centrarea cu margin auto */
-  object-fit: cover;      /* decupează imaginea pentru a umple zona fără deformare */
-  border-radius: 8px;
-}
-
-.card img {
-  max-width: 800px;
-  height: 100px !important;   /* înălțimea dorită – poți pune 80px, 120px etc. */
-  width: auto;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  object-fit: cover;
-  border-radius: 8px;
 }
 
 .reveal.active {
@@ -88,7 +72,7 @@ body {
   transform: translateY(0);
 }
 
-/* STATS – numere portocalii */
+/* STATS */
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -102,18 +86,21 @@ body {
 }
 
 .stat p {
-  color: #ffcc80; /* portocaliu deschis pentru textul de sub număr */
+  color: #ffcc80;
 }
 
-/* CARDS */
+/* CARDS – dispunere verticală, unul sub altul */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
 }
 
+/* Fiecare card ocupă toată lățimea */
 .card {
-  background: #111; /* gri foarte închis, dar se vede pe negru */
+  width: 100%;
+  background: #111;
   padding: 20px;
   border-radius: 12px;
   transition: 0.3s;
@@ -121,11 +108,30 @@ body {
 }
 
 .card:hover {
-  transform: translateY(10px);
-  box-shadow: 0 10px 30px rgba(255,140,0,0.2);
+  transform: translateY(-5px);  /* mișcare redusă pentru a nu acoperi titlul */
+  box-shadow: 0 10px 30px rgba(255, 140, 0, 0.2);
 }
 
-/* TIMELINE – linie portocalie */
+.card a {
+  color: #ff8c00;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* Stil pentru imagini – înălțime fixă, lățime automată, centrare */
+.card img {
+  max-width: 800px;
+  height: 120px;        /* modifici aici înălțimea dorită */
+  width: auto;
+  margin: 15px auto 0 auto;
+  display: block;
+  object-fit: cover;    /* decupează pentru a umple fără deformare */
+  border-radius: 8px;
+}
+
+/* TIMELINE */
 .timeline div {
   margin: 15px 0;
   padding-left: 15px;
@@ -133,7 +139,7 @@ body {
   color: #ffb347;
 }
 
-/* BACK TO TOP – buton portocaliu */
+/* BACK TO TOP */
 #topBtn {
   position: fixed;
   bottom: 20px;
@@ -153,7 +159,3 @@ body {
   background: #ffa500;
   transform: scale(1.05);
 }
-
-
-
-
