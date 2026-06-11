@@ -61,7 +61,7 @@ body {
   transform: translateY(40px);
   transition: all 1s ease;
 }
-
+.card img { max-width: 800px; margin-left: auto; margin-right: auto; }
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
