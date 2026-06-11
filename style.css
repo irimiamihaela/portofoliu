@@ -63,7 +63,7 @@ body {
 }
 .card img {
   max-width: 800px;
-  height: 250px;          /* înălțime fixă pentru toate imaginile */
+  height: 150px;          /* înălțime fixă pentru toate imaginile */
   width: auto;            /* lățimea se ajustează automat, dar nu depășește max-width */
   margin-left: auto;
   margin-right: auto;
