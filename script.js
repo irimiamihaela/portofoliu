@@ -1,45 +1,57 @@
-// fade-in on scroll
-const reveals = document.querySelectorAll(".reveal");
+document.addEventListener("DOMContentLoaded", function () {
 
-window.addEventListener("scroll", () => {
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.classList.add("active");
+  // FADE-IN ON SCROLL
+  const reveals = document.querySelectorAll(".reveal");
+
+  function reveal() {
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        el.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", reveal);
+  reveal();
+
+  // COUNTERS
+  const counters = document.querySelectorAll(".counter");
+  let started = false;
+
+  function runCounters() {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute("data-target");
+      let count = 0;
+
+      const update = () => {
+        if (count < target) {
+          count++;
+          counter.innerText = count;
+          setTimeout(update, 30);
+        }
+      };
+
+      update();
+    });
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!started && window.scrollY > 200) {
+      runCounters();
+      started = true;
     }
   });
-});
 
-// counters
-const counters = document.querySelectorAll(".counter");
+  // BACK TO TOP
+  const btn = document.getElementById("topBtn");
 
-const runCounters = () => {
-  counters.forEach(counter => {
-    const update = () => {
-      const target = +counter.getAttribute("data-target");
-      const current = +counter.innerText;
-      const inc = target / 100;
-
-      if (current < target) {
-        counter.innerText = Math.ceil(current + inc);
-        setTimeout(update, 20);
-      } else {
-        counter.innerText = target;
-      }
-    };
-    update();
+  window.addEventListener("scroll", () => {
+    btn.style.display = window.scrollY > 300 ? "block" : "none";
   });
-};
 
-window.addEventListener("scroll", runCounters, { once: true });
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 
-// back to top
-const topBtn = document.getElementById("topBtn");
-
-window.addEventListener("scroll", () => {
-  topBtn.style.display = window.scrollY > 300 ? "block" : "none";
 });
-
-topBtn.onclick = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-};
