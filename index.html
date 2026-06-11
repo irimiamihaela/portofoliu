@@ -10,71 +10,89 @@
 <body>
 
 <!-- HERO -->
-<section class="section hero">
-  <h1>Data Analytics Portfolio</h1>
-  <p>Analiză de date, vizualizare și storytelling cu R</p>
-  <a href="#projects" class="btn">Vezi proiectele</a>
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="reveal">Data Analytics Portfolio</h1>
+    <p class="reveal">Analiză, vizualizare și interpretare a datelor în R</p>
+    <a href="#projects" class="btn">Explorează proiectele</a>
+  </div>
 </section>
 
 <!-- ABOUT -->
-<section class="section">
-  <h2>Despre mine</h2>
+<section class="section reveal">
+  <h2>Despre</h2>
   <p>
-    Acest portofoliu reunește proiecte de analiză a datelor realizate în R.
-    Scopul este explorarea datelor și obținerea de insight-uri relevante prin vizualizare și modelare statistică.
+    Portofoliul reunește proiecte de analiză a datelor realizate în R și publicate pe RPubs,
+    incluzând vizualizări, modele statistice și interpretări ale datelor.
   </p>
 </section>
 
-<!-- SKILLS -->
-<section class="section">
-  <h2>Competențe</h2>
-  <ul>
-    <li>Analiză de date (R)</li>
-    <li>Vizualizare date (ggplot2)</li>
-    <li>Statistici descriptive și inferențiale</li>
-    <li>R Markdown / RPubs</li>
-  </ul>
+<!-- STATS -->
+<section class="stats">
+  <div class="stat">
+    <h3 class="counter" data-target="20">0</h3>
+    <p>Proiecte RPubs</p>
+  </div>
+  <div class="stat">
+    <h3 class="counter" data-target="15">0</h3>
+    <p>Seturi de date</p>
+  </div>
+  <div class="stat">
+    <h3 class="counter" data-target="50">0</h3>
+    <p>Vizualizări</p>
+  </div>
+  <div class="stat">
+    <h3 class="counter" data-target="5">0</h3>
+    <p>Ani experiență</p>
+  </div>
 </section>
 
 <!-- PROJECTS -->
-<section class="section" id="projects">
-  <h2>Proiecte RPubs</h2>
+<section id="projects" class="section">
+  <h2 class="reveal">Proiecte RPubs</h2>
 
   <div class="grid">
 
-    <div class="card">
-      <h3>Analiza vânzărilor</h3>
-      <p>Explorarea datelor de vânzări și identificarea tendințelor.</p>
-      <a href="LINK_RPUBS_1" target="_blank">Vezi proiect</a>
+    <div class="card reveal">
+      <h3>Analiza economică</h3>
+      <p>Interpretarea indicatorilor economici.</p>
+      <a href="#">Vezi proiect</a>
     </div>
 
-    <div class="card">
+    <div class="card reveal">
       <h3>Analiza populației</h3>
-      <p>Distribuții statistice și vizualizări demografice.</p>
-      <a href="LINK_RPUBS_2" target="_blank">Vezi proiect</a>
+      <p>Distribuții și tendințe demografice.</p>
+      <a href="#">Vezi proiect</a>
     </div>
 
-    <div class="card">
-      <h3>Analiza COVID-19</h3>
-      <p>Evoluția cazurilor și interpretare statistică.</p>
-      <a href="LINK_RPUBS_3" target="_blank">Vezi proiect</a>
+    <div class="card reveal">
+      <h3>Analiza educației</h3>
+      <p>Corelații și statistici educaționale.</p>
+      <a href="#">Vezi proiect</a>
     </div>
 
   </div>
 </section>
 
-<!-- IMPACT -->
-<section class="section">
-  <h2>Concluzii</h2>
-  <p>
-    Proiectele evidențiază modul în care analiza datelor poate transforma informațiile brute în insight-uri utile pentru decizii.
-  </p>
+<!-- TIMELINE -->
+<section class="section reveal">
+  <h2>Timeline</h2>
+  <div class="timeline">
+    <div>2024 - Primele analize în R</div>
+    <div>2025 - Vizualizări avansate</div>
+    <div>2026 - Portofoliu RPubs</div>
+  </div>
 </section>
 
-<!-- FOOTER -->
-<section class="section footer">
-  <p>© 2026 Data Analytics Portfolio</p>
+<!-- CONTACT -->
+<section class="section reveal">
+  <h2>Contact</h2>
+  <p>GitHub | RPubs | LinkedIn</p>
 </section>
 
+<!-- BACK TO TOP -->
+<button id="topBtn">↑</button>
+
+<script src="script.js"></script>
 </body>
 </html>
