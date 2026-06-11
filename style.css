@@ -61,7 +61,16 @@ body {
   transform: translateY(40px);
   transition: all 1s ease;
 }
-.card img { max-width: 800px; margin-left: auto; margin-right: auto; }
+.card img {
+  max-width: 800px;
+  height: 250px;          /* înălțime fixă pentru toate imaginile */
+  width: auto;            /* lățimea se ajustează automat, dar nu depășește max-width */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;         /* asigură centrarea cu margin auto */
+  object-fit: cover;      /* decupează imaginea pentru a umple zona fără deformare */
+  border-radius: 8px;
+}
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
