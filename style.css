@@ -122,15 +122,7 @@ body {
 }
 
 /* IMAGINI – înălțime FORȚATĂ cu !important */
-.card img {
-  max-width: 800px;
-  height: 120px !important;    /* forțează înălțimea */
-  width: auto;
-  margin: 15px auto 0 auto;
-  display: block;
-  object-fit: cover;
-  border-radius: 8px;
-}'
+
 
 .card img {
   width: 100%;           /* întinde imaginea pe toată lățimea cardului */
