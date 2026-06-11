@@ -1,101 +1,161 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Data Analytics Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+}
 
-<body>
+body {
+  background: #000;
+  color: #ff8c00;
+  overflow-x: hidden;
+  margin: 0;
+}
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <h1 class="reveal">Data Analytics Portfolio</h1>
-    <p class="reveal">Analiza, vizualizarea și interpretarea datelor în R</p>
-    <a href="#projects" class="btn">Explorează proiectele</a>
-  </div>
-</section>
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #000;
+}
 
-<!-- ABOUT -->
-<section class="section reveal">
-  <h2>Scurta descriere a informațiilor disponibile pe site</h2>
-  <p>
-    Site-ul reunește proiecte de analiză a datelor realizate în R și publicate pe RPubs,
-    incluzând vizualizări, modele statistice și interpretări ale datelor.
-  </p>
-</section>
+.hero h1 {
+  font-size: 55px;
+  color: #ffa500;
+}
 
-  <!-- PROJECTS -->
-<section id="projects" class="section">
-  <h2 class="reveal">Proiecte RPubs</h2>
+.hero p {
+  color: #ffb347;
+  margin-top: 10px;
+}
 
-  <div class="grid">
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #ff8c00;
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-    <div class="card reveal">
-      <h3>Analysis of a dataset consisting of seven poems using NLP tools</h3>
-      <p>In this study, we will implement methods such as Natural Language Processing (NLP) to perform text analytics and visualization. </p>
-      <a href="https://rpubs.com/mihaela123/1263158">Detalii proiect</a>
-      <!-- Imagine adăugată dedesubt -->
-      <img src="word_distribution_in_each_poem.png" alt="Distributia poeziilor dupa numarul de cuvinte">
-    </div>
+.btn:hover {
+  background: #ffa500;
+  transform: scale(1.02);
+}
 
-    <div class="card reveal">
-      <h3>Analiza populației</h3>
-      <p>Distribuții și tendințe demografice.</p>
-      <a href="#">Vezi proiect</a>
-      <img src="populatie.jpg" alt="Piramidă populație">
-    </div>
+/* SECTIONS */
+.section {
+  padding: 60px 15%;  /* redus față de 100px pentru a micșora spațiul între secțiuni */
+}
 
-    <div class="card reveal">
-      <h3>Analiza educației</h3>
-      <p>Corelații și statistici educaționale.</p>
-      <a href="#">Vezi proiect</a>
-      <img src="educatie.jpg" alt="Diagramă educație">
-    </div>
+/* Spațiu suplimentar doar pentru titlul proiectelor (previne suprapunerea la hover) */
+#projects h2 {
+  margin-bottom: 50px;
+}
 
-  </div>
-</section>
+/* FADE IN */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
 
-  <!-- STATS -->
-<section class="stats">
-  <div class="stat">
-    <h3 class="counter" data-target="20">0</h3>
-    <p>Proiecte publicate pe RPubs</p>
-  </div>
-  <div class="stat">
-    <h3 class="counter" data-target="15">0</h3>
-    <p>Seturi de date</p>
-  </div>
-  <div class="stat">
-    <h3 class="counter" data-target="50">0</h3>
-    <p>Vizualizări</p>
-  </div>
-  <div class="stat">
-    <h3 class="counter" data-target="5">0</h3>
-    <p>Ani experiență</p>
-  </div>
-</section>
-<!-- TIMELINE -->
-<section class="section reveal">
-  <h2>Timeline</h2>
-  <div class="timeline">
-    <div>2024 - Primele analize în R</div>
-    <div>2025 - Vizualizări avansate</div>
-    <div>2026 - Portofoliu RPubs</div>
-  </div>
-</section>
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-<!-- CONTACT -->
-<section class="section reveal">
-  <h2>Contact</h2>
-  <p>GitHub | RPubs | LinkedIn</p>
-</section>
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  padding: 80px 10%;
+}
 
-<!-- BACK TO TOP -->
-<button id="topBtn">↑</button>
+.stat h3 {
+  font-size: 40px;
+  color: #ff8c00;
+}
 
-<script src="script.js"></script>
-</body>
-</html>
+.stat p {
+  color: #ffcc80;
+}
+
+/* CARDS – dispunere verticală, unul sub altul */
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Fiecare card ocupă toată lățimea */
+.card {
+  width: 100%;
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+  color: #ffb347;
+}
+
+.card:hover {
+  transform: translateY(-5px);  /* mișcare redusă pentru a nu acoperi titlul */
+  box-shadow: 0 10px 30px rgba(255, 140, 0, 0.2);
+}
+
+.card a {
+  color: #ff8c00;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* Stil pentru imagini – înălțime fixă, lățime automată, centrare */
+.card img {
+  max-width: 800px;
+  height: 120px;        /* modifici aici înălțimea dorită */
+  width: auto;
+  margin: 15px auto 0 auto;
+  display: block;
+  object-fit: cover;    /* decupează pentru a umple fără deformare */
+  border-radius: 8px;
+}
+
+/* TIMELINE */
+.timeline div {
+  margin: 15px 0;
+  padding-left: 15px;
+  border-left: 2px solid #ff8c00;
+  color: #ffb347;
+}
+
+/* BACK TO TOP */
+#topBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 15px;
+  border: none;
+  background: #ff8c00;
+  color: #000;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#topBtn:hover {
+  background: #ffa500;
+  transform: scale(1.05);
+}
