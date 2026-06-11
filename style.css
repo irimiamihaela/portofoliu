@@ -52,12 +52,17 @@ body {
 
 /* SECTIONS */
 .section {
-  padding: 60px 15%;  /* redus față de 100px pentru a micșora spațiul între secțiuni */
+  padding: 40px 15%;  /* redus semnificativ față de 100px */
 }
 
-/* Spațiu suplimentar doar pentru titlul proiectelor (previne suprapunerea la hover) */
+/* Spațiu controlat între ABOUT și PROJECTS */
+#projects {
+  padding-top: 10px;   /* trage în sus secțiunea proiectelor */
+}
+
+/* Titlul proiectelor – distanță clară față de primul card */
 #projects h2 {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 /* FADE IN */
@@ -89,15 +94,14 @@ body {
   color: #ffcc80;
 }
 
-/* CARDS – dispunere verticală, unul sub altul */
+/* CARDS – dispunere verticală */
 .grid {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  margin-top: 30px;
+  margin-top: 20px;   /* spațiu sub titlu */
 }
 
-/* Fiecare card ocupă toată lățimea */
 .card {
   width: 100%;
   background: #111;
@@ -108,7 +112,7 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-5px);  /* mișcare redusă pentru a nu acoperi titlul */
+  transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(255, 140, 0, 0.2);
 }
 
@@ -120,14 +124,13 @@ body {
   margin-top: 10px;
 }
 
-/* Stil pentru imagini – înălțime fixă, lățime automată, centrare */
 .card img {
   max-width: 800px;
-  height: 120px;        /* modifici aici înălțimea dorită */
+  height: 120px;       /* înălțime fixă – poți modifica aici */
   width: auto;
   margin: 15px auto 0 auto;
   display: block;
-  object-fit: cover;    /* decupează pentru a umple fără deformare */
+  object-fit: cover;
   border-radius: 8px;
 }
 
