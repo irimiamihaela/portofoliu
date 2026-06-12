@@ -149,7 +149,7 @@ body {
 /* Imaginea – lată cât cardul, înălțime fixă, decupare corectă */
 .card img {
   width: 100%;              /* întinde pe toată lățimea cardului */
-  height: 120px;            /* înălțimea ta dorită (modifici aici) */
+  height: 200px;            /* înălțimea ta dorită (modifici aici) */
   object-fit: cover;        /* decupează ca să umple fără deformare */
   display: block;
   margin: 0;                /* fără margini, lovește marginile */
