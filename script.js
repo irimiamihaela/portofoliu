@@ -47,3 +47,46 @@ window.addEventListener('scroll', () => {
 topBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// ======================== MODAL PENTRU IMAGINI ========================
+const modal = document.getElementById('imageModal');
+const modalImg = document.getElementById('modalImg');
+const modalCaption = document.getElementById('modalCaption');
+const closeBtn = document.querySelector('.close');
+
+// Toate imaginile din carduri
+const projectImages = document.querySelectorAll('.card img');
+
+// Funcție deschide modal
+function openModal(imgElement) {
+  modal.style.display = 'block';
+  modalImg.src = imgElement.src;
+  modalCaption.innerHTML = imgElement.alt || 'Imagine mărită';
+}
+
+// Adaugă eveniment click pe fiecare imagine
+projectImages.forEach(img => {
+  img.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openModal(img);
+  });
+});
+
+// Închide modal la click pe X sau pe fundalul întunecat
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+modal.addEventListener('click', (e) => {
+  // Dacă se face click pe fundalul modalului (nu pe imagine sau pe X)
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+// Închide cu tasta Esc
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.style.display === 'block') {
+    modal.style.display = 'none';
+  }
+});
