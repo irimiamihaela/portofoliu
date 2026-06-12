@@ -123,6 +123,7 @@ body {
 
 /* IMAGINI – înălțime FORȚATĂ cu !important */
 /* Cardul nu mai are padding pe laterale */
+/* Cardul nu mai are padding pe laterale */
 .card {
   width: 100%;
   background: #111;
@@ -148,7 +149,7 @@ body {
 /* Imaginea – lată cât cardul, înălțime fixă, decupare corectă */
 .card img {
   width: 100%;              /* întinde pe toată lățimea cardului */
-  height: 220px;            /* înălțimea ta dorită (modifici aici) */
+  height: 120px;            /* înălțimea ta dorită (modifici aici) */
   object-fit: cover;        /* decupează ca să umple fără deformare */
   display: block;
   margin: 0;                /* fără margini, lovește marginile */
